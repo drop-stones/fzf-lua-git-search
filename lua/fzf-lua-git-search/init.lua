@@ -1,4 +1,5 @@
 local config = require("fzf-lua-git-search.config")
+local picker = require("fzf-lua-git-search.picker")
 
 local M = {}
 
@@ -7,5 +8,7 @@ local M = {}
 function M.setup(user_options)
   config.setup(user_options or {})
 end
+
+M.files = picker.files
 
 return M
