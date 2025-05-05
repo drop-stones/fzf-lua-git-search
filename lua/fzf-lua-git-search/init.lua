@@ -1,5 +1,6 @@
 local config = require("fzf-lua-git-search.config")
 local picker = require("fzf-lua-git-search.picker")
+local transform = require("fzf-lua-git-search.transform")
 
 local M = {}
 
@@ -15,5 +16,7 @@ M.live_grep = picker.live_grep
 M.grep_cword = picker.grep_cword
 M.grep_cWORD = picker.grep_cWORD
 M.grep_visual = picker.grep_visual
+
+M.transform = transform
 
 return M
