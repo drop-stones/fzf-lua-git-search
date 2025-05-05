@@ -1,3 +1,5 @@
+local options = require("fzf-lua-git-search.options")
+
 local M = {}
 
 M.git_grep = {
@@ -44,6 +46,9 @@ M.git_grep = {
 ---@param user_options table
 function M.setup(user_options)
   M.git_grep = vim.tbl_extend("force", M.git_grep, user_options.git_grep)
+
+  -- Initialize options for fn_transform_cmd()
+  options.init()
 end
 
 return M
