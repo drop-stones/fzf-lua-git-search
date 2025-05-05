@@ -16,7 +16,7 @@ M.git_grep = {
 ---Overrides the default options with user-provided options.
 ---@param user_options table
 function M.setup(user_options)
-  M.git_grep = vim.tbl_extend("force", M.git_grep, user_options.git_grep)
+  M.git_grep = vim.tbl_extend("force", M.git_grep, user_options.git_grep or {})
 
   -- Set plugin root path for access from headless child processes
   vim.env.FZF_LUA_GIT_SEARCH = util.get_plugin_root()
